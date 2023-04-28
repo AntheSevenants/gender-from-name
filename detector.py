@@ -1,8 +1,11 @@
 import pandas as pd
 import re
+import os.path
 
-df_male_names = pd.read_csv("data/male_names.csv", sep=";")
-df_female_names = pd.read_csv("data/female_names.csv", sep=";")
+base = os.path.dirname(os.path.abspath(__file__))
+
+df_male_names = pd.read_csv(f"{base}/data/male_names.csv", sep=";")
+df_female_names = pd.read_csv(f"{base}/data/female_names.csv", sep=";")
 
 df_names = pd.merge(df_male_names, df_female_names, on="name",
                     how="outer", suffixes=[".male", ".female"])
