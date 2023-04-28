@@ -21,6 +21,9 @@ df_names["length"] = df_names.apply(
 df_names = df_names.sort_values(by=["length", "frequency"], ascending=False)
 
 def get_gender(name):
+    if len(name) == 0:
+        return
+
     name = re.sub(r"[^a-z]", "", name)
 
     df_search_space = df_names.loc[df_names["length"] <= len(name)]
