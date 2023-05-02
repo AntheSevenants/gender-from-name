@@ -21,6 +21,9 @@ df_names["length"] = df_names.apply(
 df_names = df_names.sort_values(by=["length", "frequency"], ascending=False)
 
 def get_gender(name):
+    if type(name) == float:
+        return None
+
     if len(name) == 0:
         return
 
