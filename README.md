@@ -26,11 +26,11 @@ Now, you can supply any name to this function. It will return whatever gender it
 >>> get_gender("Marie Verhulst")
 'female'
 >>> get_gender("Jonas Geirnaert")
-'female'
+'male'
 >>> get_gender("Sam Gooris")
 'male'
->>> get_gender("Louis Tobback")
-'male'
+>>> get_gender("Sofie Van Moll")
+'female'
 ```
 
 If the program cannot find a match, it returns None:
