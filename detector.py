@@ -27,7 +27,7 @@ def get_gender(name):
     if len(name) == 0:
         return
 
-    name = re.sub(r"[^a-z]", "", name)
+    name = re.sub(r"[^a-z]", "", name, flags=re.IGNORECASE)
 
     df_search_space = df_names.loc[df_names["length"] <= len(name)]
 
