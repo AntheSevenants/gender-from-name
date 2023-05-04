@@ -24,7 +24,9 @@ def get_gender(name):
     if type(name) == float:
         return None
 
-    name = re.sub(r"[^a-z]", "", name, flags=re.IGNORECASE)
+    # We remove all strange characters
+    # BUT we leave diacritics!
+    name = re.sub(r"[^a-z&&^à-ü&&^À-Ü]", "", name, flags=re.IGNORECASE)
 
     if len(name) == 0:
         return
