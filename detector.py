@@ -26,7 +26,7 @@ def get_gender(name):
 
     # We remove all strange characters
     # BUT we leave diacritics!
-    name = re.sub(r"[^a-z&&^à-ü&&^À-Ü]", "", name, flags=re.IGNORECASE)
+    name = re.sub(r"[^a-zà-üÀ-Ü]", "", name, flags=re.IGNORECASE)
 
     if len(name) == 0:
         return
